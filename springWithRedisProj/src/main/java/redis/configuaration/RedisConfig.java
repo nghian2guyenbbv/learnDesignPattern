@@ -1,4 +1,4 @@
-package configuaration;
+package redis.configuaration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -11,9 +11,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 @Configuration
 public class RedisConfig {
-    @Value("spring.redis.host")
+    @Value("${spring.redis.host}")
     private String redisHost;
-    @Value("spring.redis.port")
+    @Value("${spring.redis.port}")
     private int redisPort;
 
     @Bean
@@ -23,7 +23,7 @@ public class RedisConfig {
 
     @Bean
     @Primary
-    public RedisTemplate redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<Object, Object> template = new RedisTemplate<Object, Object>();
         template.setConnectionFactory(redisConnectionFactory);
         return template;
