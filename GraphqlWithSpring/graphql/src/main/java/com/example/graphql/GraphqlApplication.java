@@ -17,13 +17,11 @@ import java.util.List;
 public class GraphqlApplication {
 
   public static void main(String[] args) {
-
-    ApplicationContext applicationContext = SpringApplication.run(GraphqlApplication.class, args);
+    SpringApplication.run(GraphqlApplication.class, args);
+    /*ApplicationContext applicationContext = SpringApplication.run(GraphqlApplication.class, args);
     BookRepository bookRepository = applicationContext.getBean(BookRepository.class);
     List<Book> books = bookRepository.findAll();
-    books.forEach(s->System.out.println("name: "+s.getName()+" id: "+s.getId()));
-    /*Book sach1 = bookRepository.findById(Long.valueOf(0)).get();
-    System.out.println("sach1: "+sach1.getName());*/
+    books.forEach(s->System.out.println("name: "+s.getName()+" id: "+s.getId()));*/
   }
 
   @Bean
