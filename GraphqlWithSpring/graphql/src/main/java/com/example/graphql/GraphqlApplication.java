@@ -28,6 +28,7 @@ public class GraphqlApplication {
   ApplicationRunner applicationRunner(AuthorRepository authorrepo, BookRepository bookrepo) {
     return args -> {
       Author nghia = authorrepo.save(new Author(1, "nghia"));
+      Author ngan = authorrepo.save(new Author(2, "ngan"));
       List<Book> books = bookrepo.saveAll(
           Arrays.asList(new Book( nghia, "sach1", "sach1"), new Book( nghia, "porn", "porn")));
     };
