@@ -14,3 +14,13 @@ type Book{
     title: String!
     name: String
 }
+
+type Mutation{
+  addBook(bookInput: BookInput): Book
+}
+
+input BookInput{
+ authorId: ID!
+ name: String!
+ title: String
+}
